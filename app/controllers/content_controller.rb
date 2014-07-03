@@ -29,6 +29,10 @@ class ContentController < ApplicationController
       @auto_discovery_url_atom = opts.url_for(:format => 'atom', :only_path => false)
     end
   end
+  
+  def merge
+  redirect_to :action => 'index'
+  end
 
   def theme_layout
     this_blog.current_theme.layout(self.action_name)
